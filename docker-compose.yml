@@ -7,15 +7,21 @@ services:
 #    build: haproxy
     ports:
       - "8080:8080"
+      - "9000:9000"
     volumes:
       - ./haproxy/usr/local/etc/haproxy:/test
 #    command:
 #      sleep 100000
 
-  httpbin:
+  httpbin_1:
     image: ericdahl/httpbin:e249975
     ports:
-      - "1111:8080"
+      - "8080"
+
+  httpbin_2:
+    image: ericdahl/httpbin:e249975
+    ports:
+      - "8080"
 
 
 #
