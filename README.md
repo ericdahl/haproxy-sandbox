@@ -1,4 +1,6 @@
+# test-haproxy-sessions
 
+experimenting with haproxy proxy config/logging/etc
 
 
 ```
