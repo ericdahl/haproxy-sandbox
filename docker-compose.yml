@@ -3,9 +3,10 @@ services:
 
   haproxy:
 #    image: haproxy:2.0
-    image: test-haproxy-sessions_haproxy:latest
-#    build: haproxy
+#    image: test-haproxy-sessions_haproxy:latest
+    build: haproxy
     ports:
+      - "1111:1111" # nginx
       - "8080:8080"
       - "9000:9000"
     volumes:
@@ -22,3 +23,8 @@ services:
     image: ericdahl/httpbin:e249975
     ports:
       - "8080"
+
+  nginx:
+    image: nginx
+    ports:
+      - "80"
